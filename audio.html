@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Audio - ACMONEY</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header>
+
+    <h1>ACMONEY</h1>
+
+</header>
+
+<a href="index.html" class="volver">
+      Volver al inicio   
+</a>
+
+<section class="productos">
+
+    <div class="titulo_producto">
+
+        <h2>Productos de Audio</h2>
+
+    </div>
+
+    <div class="contenedor_productos">
+
+        <div class="producto">
+
+            <img src="img/airpods.jpg" alt="">
+
+            <h3>AirPods Pro 2</h3>
+
+            <p>Cancelación de ruido premium.</p>
+
+            <span>USD 249</span>
+
+<input type="number" id="cantidadAirpods" value="1" min="1">
+
+<button onclick="agregarCarrito('AirPods Pro 2',249,document.getElementById('cantidadAirpods').value)">
+    Agregar al carrito
+</button>
+
+        </div>
+
+        <div class="producto">
+
+            <img src="img/auriculares.jpg" alt="">
+
+            <h3>Sony XM5</h3>
+
+            <p>Audio de alta calidad.</p>
+
+            <span>USD 399</span>
+
+ <input type="number" id="cantidadauriculares" value="1" min="1">
+
+<button onclick="agregarCarrito('Sony XM5',399,document.getElementById('cantidadauriculares').value)">
+    Agregar al carrito
+</button>    
+         
+</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+let productos = JSON.parse(localStorage.getItem("carrito")) || [];
+
+function agregarCarrito(nombre, precio, cantidad){
+
+    cantidad = parseInt(cantidad);
+
+    productos.push({
+        nombre: nombre,
+        precio: precio,
+        cantidad: cantidad
+    });
+
+    localStorage.setItem(
+        "carrito",
+        JSON.stringify(productos)
+    );
+
+    alert("Producto agregado al carrito");
+}
+
+</script>
+
+
+</body>
+</html>

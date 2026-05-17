@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Celulares - ACMONEY</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header>
+    <h1>ACMONEY</h1>
+</header>
+
+<a href="index.html" class="volver">
+    Volver al inicio   
+</a>
+
+<section class="productos">
+
+    <div class="titulo_producto">
+
+        <h2>Celulares</h2>
+
+    </div>
+
+    <div class="contenedor_productos">
+
+        <div class="producto">
+
+            <img src="img/iphone15.jpg" alt="">
+
+            <h3>iPhone 15 Pro Max</h3>
+
+            <p>256GB Titanio.</p>
+
+            <span>USD 1399</span>
+
+         <input type="number" id="cantidadiphone15" value="1" min="1">
+
+ <button onclick="agregarCarrito('iPhone 15 Pro Max',1399,document.getElementById('cantidadiphone15').value)">
+    Agregar al carrito
+</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+let productos = JSON.parse(localStorage.getItem("carrito")) || [];
+
+function agregarCarrito(nombre, precio, cantidad){
+
+    cantidad = parseInt(cantidad);
+
+    productos.push({
+        nombre: nombre,
+        precio: precio,
+        cantidad: cantidad
+    });
+
+    localStorage.setItem(
+        "carrito",
+        JSON.stringify(productos)
+    );
+
+    alert("Producto agregado al carrito");
+}
+
+</script>
+
+
+</body>
+</html>

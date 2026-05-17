@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Relojes - ACMONEY</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header>
+    <h1>ACMONEY</h1>
+</header>
+
+<a href="index.html" class="volver">
+      Volver al inicio   
+</a>
+
+<section class="productos">
+
+    <div class="titulo_producto">
+
+        <h2>Relojes Inteligentes</h2>
+
+    </div>
+
+    <div class="contenedor_productos">
+
+        <div class="producto">
+
+            <img src="img/applewatch.jpg" alt="">
+
+            <h3>Apple Watch Series 9</h3>
+
+            <p>GPS + Cellular.</p>
+
+            <span>USD 499</span>
+
+            <input type="number" id="cantidadapplewatch" value="1" min="1">
+
+<button onclick="agregarCarrito('Apple Watch Series 9',499,document.getElementById('cantidadapplewatch').value)">
+    Agregar al carrito
+</button>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+let productos = JSON.parse(localStorage.getItem("carrito")) || [];
+
+function agregarCarrito(nombre, precio, cantidad){
+
+    cantidad = parseInt(cantidad);
+
+    productos.push({
+        nombre: nombre,
+        precio: precio,
+        cantidad: cantidad
+    });
+
+    localStorage.setItem(
+        "carrito",
+        JSON.stringify(productos)
+    );
+
+    alert("Producto agregado al carrito");
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ACMONEY</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>ACMONEY</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#categorias">Categorías</a></li>
+                <li><a href="#mayorista">Mayoristas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#carrito">Carrito</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero_texto">
+
+            <h2>Tecnología que eleva tu mundo</h2>
+
+            <p>
+                Productos premium, electrónica de alta gama y oportunidades
+                exclusivas para compradores y revendedores.
+            </p>
+
+            <div class="hero_botones">
+                <a href="#productos">
+                   <button>Comprar ahora</button>
+               </a>
+                <a href="#mayorista">
+    <button class="btn_secundario">
+        Venta mayorista
+    </button>
+</a>
+            </div>
+
+        </div>
+
+        <div class="hero_imagen">
+            <img src="img/hero.png" alt="">
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIAS -->
+
+    <section class="categorias" id="categorias">
+
+        <h2>Categorías</h2>
+
+        <div class="contenedor_categorias">
+
+            <a href="audio.html" class="categoria">
+
+    <img src="img/audio.jpg" alt="">
+
+    <h3>Audio</h3>
+
+</a>
+
+            <a href="relojes.html" class="categoria">
+
+    <img src="img/watch.jpg" alt="">
+
+    <h3>Relojes Inteligentes</h3>
+
+</a>
+
+           <a href="celulares.html" class="categoria">
+
+    <img src="img/celulares.jpg" alt="">
+
+    <h3>Celulares</h3>
+
+</a>
+
+           <a href="perfumes.html" class="categoria">
+
+    <img src="img/perfume.jpg" alt="">
+
+    <h3>Perfumes</h3>
+
+</a>  
+
+    </section>
+
+
+    <!-- PRODUCTOS -->
+
+   <section class="productos" id="productos">
+
+        <div class="titulo_producto">
+            <h2>Productos destacados</h2>
+        </div>
+
+        <div class="contenedor_productos">
+
+            <div class="producto">
+
+                <img src="img/airpods.jpg" alt="">
+
+                <h3>Apple AirPods Pro 2</h3>
+
+                <p>Cancelación de ruido premium.</p>
+
+                <span>USD 249</span>
+
+                <input type="number" id="cantidadAirpods" value="1" min="1">
+
+<button onclick="agregarCarrito('AirPods Pro 2',249,document.getElementById('cantidadAirpods').value)">
+    Agregar al carrito
+</button>
+            </div>
+
+
+            <div class="producto">
+
+                <img src="img/applewatch.jpg" alt="">
+
+                <h3>Apple Watch Series 9</h3>
+
+                <p>GPS + SEGURIDAD</p>
+
+                <span>USD 499</span>
+
+                <input type="number" id="cantidadWatch" value="1" min="1">
+
+<button onclick="agregarCarrito('Apple Watch Series 9',499,document.getElementById('cantidadWatch').value
+)">
+    Agregar al carrito
+</button>
+            </div>
+
+
+            <div class="producto">
+
+                <img src="img/auriculares.jpg" alt="">
+
+                <h3>Sony WH-1000XM5</h3>
+
+                <p>Cancelación de ruido.</p>
+
+                <span>USD 349</span>
+
+ <input type="number" id="cantidadauriculares" value="1" min="1">
+
+ <button onclick="agregarCarrito('Sony WH-1000XM5',349,document.getElementById('cantidadauriculares').value)">
+    Agregar al carrito
+</button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <img src="img/BleudeChanel.jpg" alt="">
+
+                <h3>Bleu de Chanel</h3>
+
+                <p>Perfume masculino Top.</p>
+
+                <span>USD 305</span>
+
+               <input type="number" id="cantidadBleudeChanel" value="1" min="1">
+
+ <button onclick="agregarCarrito('Bleu de Chanel',305,document.getElementById('cantidadBleudeChanel').value)">
+    Agregar al carrito
+</button>
+
+            </div>
+
+        </div>
+
+    </section>
+<section class="carrito" id="carrito">
+
+    <h2>Carrito</h2>
+
+    <ul id="listaCarrito"></ul>
+
+    <h3 id="total">
+        Total: USD 0
+    </h3>
+
+    <button onclick="finalizarCompra()">
+        Finalizar compra
+    </button>
+
+    <button onclick="vaciarCarrito()">
+    Vaciar carrito
+</button>
+
+</section>
+
+    <!-- MAYORISTAS -->
+
+    <section class="mayorista" id="mayorista">
+
+        <div class="mayorista_texto">
+
+            <h2>Venta Mayorista</h2>
+
+            <p>
+                Accedé a precios exclusivos para revendedores,
+                negocios y emprendedores.
+            </p>
+
+            <button onclick="mayorista()">
+    Ser mayorista
+</button>
+        </div>
+
+        <div class="mayorista_imagen">
+            <img src="img/mayorista.jpg" alt="">
+        </div>
+
+    </section>
+
+
+    <!-- BENEFICIOS -->
+
+    <section class="beneficios">
+
+        <div class="beneficio">
+            <h3>Productos originales</h3>
+            <p>Trabajamos con primeras marcas.</p>
+        </div>
+
+        <div class="beneficio">
+            <h3>Pagos seguros</h3>
+            <p>Protección garantizada.</p>
+        </div>
+
+        <div class="beneficio">
+            <h3>Envíos rápidos</h3>
+            <p>A todo el país.</p>
+        </div>
+
+        <div class="beneficio">
+            <h3>Atención personalizada</h3>
+            <p>Soporte premium 24/7.</p>
+        </div>
+
+    </section>
+
+
+    <!-- CONTACTO -->
+
+    <section class="contacto" id="contacto">
+
+        <h2>Contacto & Ubicación</h2>
+
+        <p>Buenos Aires, Argentina</p>
+
+        <p>Instagram: @acmoney</p>
+
+        <p>WhatsApp: +54 11 5154-4467</p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>ACMONEY</h2>
+
+        <p>
+            Marketplace premium de electrónica,
+            perfumes y productos exclusivos.
+        </p>
+
+        <p>© 2026 ACMONEY</p>
+
+    </footer>
+<script>
+
+let productos = JSON.parse(localStorage.getItem("carrito")) || [];
+
+actualizarCarrito();
+
+function agregarCarrito(nombre, precio, cantidad){
+
+    cantidad = parseInt(cantidad);
+
+    productos.push({
+        nombre: nombre,
+        precio: precio,
+        cantidad: cantidad
+    });
+
+    localStorage.setItem(
+        "carrito",
+        JSON.stringify(productos)
+    );
+
+    actualizarCarrito();
+}
+
+function actualizarCarrito(){
+
+    let lista = document.getElementById("listaCarrito");
+
+    let total = 0;
+
+    lista.innerHTML = "";
+
+    for(let i = 0; i < productos.length; i++){
+
+        let subtotal =
+        productos[i].precio * productos[i].cantidad;
+
+        total += subtotal;
+
+        lista.innerHTML += `
+            <li>
+                ${productos[i].nombre}
+                x${productos[i].cantidad}
+                - USD ${subtotal}
+            </li>
+        `;
+    }
+
+    document.getElementById("total").innerHTML =
+    "Total: USD " + total;
+}
+
+function finalizarCompra(){
+
+    let mensaje =
+    "Hola, quiero realizar una compra en ACMONEY.%0A%0A";
+
+    let total = 0;
+
+    mensaje += "Productos:%0A";
+
+    for(let i = 0; i < productos.length; i++){
+
+        let subtotal =
+        productos[i].precio * productos[i].cantidad;
+
+        total += subtotal;
+
+        mensaje +=
+        "- " +
+        productos[i].nombre +
+        " x" +
+        productos[i].cantidad +
+        " - USD " +
+        subtotal +
+        "%0A";
+    }
+
+    mensaje += "%0A";
+
+    mensaje += "Total: USD " + total;
+
+    window.open(
+    "https://wa.me/5491151544467?text=" + mensaje
+    );
+}
+function mayorista(){
+
+    let mensaje =
+    "Hola, quiero información para comprar al por mayor en ACMONEY.";
+
+    window.open(
+    "https://wa.me/5491151544467?text=" +
+    encodeURIComponent(mensaje)
+    );
+}
+
+function vaciarCarrito(){
+
+    productos = [];
+
+    localStorage.removeItem("carrito");
+
+    actualizarCarrito();
+}
+
+</script>
+
+</body>
+</html>

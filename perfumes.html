@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Perfumes - ACMONEY</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header>
+    <h1>ACMONEY</h1>
+</header>
+
+<a href="index.html" class="volver">
+    Volver al inicio   
+</a>
+
+<section class="productos">
+
+    <div class="titulo_producto">
+
+        <h2>Perfumes</h2>
+
+    </div>
+
+    <div class="contenedor_productos">
+
+        <div class="producto">
+
+            <img src="img/BleudeChanel.jpg" alt="">
+
+            <h3>Bleu de Chanel</h3>
+
+            <p>Perfume masculino TOP.</p>
+
+            <span>USD 305</span>
+
+            <input type="number" id="cantidadBleudeChanel" value="1" min="1">
+
+ <button onclick="agregarCarrito('Bleu de Chanel',305,document.getElementById('cantidadBleudeChanel').value)">
+    Agregar al carrito
+</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+let productos = JSON.parse(localStorage.getItem("carrito")) || [];
+
+function agregarCarrito(nombre, precio, cantidad){
+
+    cantidad = parseInt(cantidad);
+
+    productos.push({
+        nombre: nombre,
+        precio: precio,
+        cantidad: cantidad
+    });
+
+    localStorage.setItem(
+        "carrito",
+        JSON.stringify(productos)
+    );
+
+    alert("Producto agregado al carrito");
+}
+
+</script>
+
+</body>
+</html>
